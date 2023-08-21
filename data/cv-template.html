@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }}'s CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');  /* Font Awesome for icons */
+        
+        body {
+            font-family: {{ font_family }}, sans-serif;;
+            margin: 40px;
+            color: {{ font_color }};
+            background-color: #f4f4f4;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #2C3E50;
+            border-bottom: 2px solid {{ accent_color }};
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2C3E50;
+            margin-top: 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h3 {
+            color: {{ accent_color }};
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #7f8c8d;
+        }
+
+        p, .info-value {
+            color: {{ font_color }};
+            line-height: 1.6;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: {{ section_font_color }};
+        }
+
+        .info, .toc, .section {
+            background-color: #ffffff00;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+            margin-bottom: 20px;
+        }
+
+        .toc.sticky {
+            position: fixed;
+            top: 20px;
+            max-width: 250px;
+        }
+
+        .toc ul {
+            columns: 1;
+        }
+
+        .toc li {
+            margin-bottom: 0;
+        }
+
+        .section#skills ul {
+            columns: 2;
+            padding-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: {{ accent_color }};
+        }
+
+        .social-icons {
+            position: absolute;
+            right: 40px;
+            top: 60px;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+        }
+
+        .fa-linkedin, .fa-github {
+            font-size: 24px;
+            color: {{ accent_color }};
+        }
+    </style>
+    <script>
+        // Function to make the TOC fixed when scrolled past it
+        window.onscroll = function() {
+            var toc = document.querySelector('.toc');
+            var headerHeight = document.querySelector('h1').offsetHeight;
+            
+            if (window.pageYOffset > headerHeight + 70) {
+                toc.classList.add('sticky');
+            } else {
+                toc.classList.remove('sticky');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>{{ name }}</h1>
+    <div class="social-icons">
+        {% if github %}
+            <a href="{{ github }}" target="_blank"><i class="fab fa-github"></i></a>
+        {% endif %}
+        {% if linkedin %}
+            <a href="{{ linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+        {% endif %}
+    </div>
+    <p><span class="info-label">Email: </span><span class="info-value">{{ email }}</span></p>
+    <p><span class="info-label">Phone: </span><span class="info-value">{{ phone }}</span></p>
+    <p><span class="info-label">Location: </span><span class="info-value">{{ location }}</span></p>
+    <p><span class="info-label">Time Zone: </span><span class="info-value">{{ time_zone }}</span></p>
+    <div class="toc" style="position: fixed; left: 40px; top: 60px;">
+        <h2>Table of<br>Contents</h2>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#languages">Languages</a></li>
+        </ul>
+    </div>
+    <div class="section" id="summary">
+        <h2>Summary</h2>
+        <p>{{ overview }}</p>
+    </div>
+    <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="section" id="experience">
+        <h2>Experience</h2>
+        {% for job in jobs %}
+            <h3>{{ job.role }} | {{ job.company }}</h3>
+            <p><span class="info-label">Duration: </span><span class="info-value">{{ job.duration.split(" | ")[0] }}</span></p>
+            <p><span class="info-label">Location: </span><span class="info-value">{{ job.location }}</span></p>
+            <p><strong class="info-label">Description:</strong> <span class="info-value">{{ job.description }}</span></p>
+        {% endfor %}
+    </div>
+    <div class="section" id="education">
+        <h2>Education</h2>
+        {% for edu in education %}
+            <h3>{{ edu.institution.strip() }}</h3>
+            <p><span class="info-label">Degree: </span><span class="info-value">{{ edu.degree.strip() }}</span></p>
+            <p><span class="info-label">Duration: </span><span class="info-value">{{ edu.duration.strip() }}</span></p>
+            <p><strong class="info-label">Description:</strong> <span class="info-value">{{ edu.description }}</span></p>
+            {% endfor %}
+    </div>
+    <div class="section" id="languages">
+        <h2>Languages</h2>
+        <ul>
+            {% for language in languages %}
+                <li>{{ language }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xander Horn's CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');  /* Font Awesome for icons */
+        
+        body {
+            font-family: Sans, sans-serif;;
+            margin: 40px;
+            color: #7f8c8d;
+            background-color: #f4f4f4;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #2C3E50;
+            border-bottom: 2px solid #97C58F;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2C3E50;
+            margin-top: 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h3 {
+            color: #97C58F;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #7f8c8d;
+        }
+
+        p, .info-value {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #424242;
+        }
+
+        .info, .toc, .section {
+            background-color: #ffffff00;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+            margin-bottom: 20px;
+        }
+
+        .toc.sticky {
+            position: fixed;
+            top: 20px;
+            max-width: 250px;
+        }
+
+        .toc ul {
+            columns: 1;
+        }
+
+        .toc li {
+            margin-bottom: 0;
+        }
+
+        .section#skills ul {
+            columns: 2;
+            padding-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #97C58F;
+        }
+
+        .social-icons {
+            position: absolute;
+            right: 40px;
+            top: 60px;
+        }
+
+        .social-icons a {
+            margin-left: 10px;
+        }
+
+        .fa-linkedin, .fa-github {
+            font-size: 24px;
+            color: #97C58F;
+        }
+    </style>
+    <script>
+        // Function to make the TOC fixed when scrolled past it
+        window.onscroll = function() {
+            var toc = document.querySelector('.toc');
+            var headerHeight = document.querySelector('h1').offsetHeight;
+            
+            if (window.pageYOffset > headerHeight + 70) {
+                toc.classList.add('sticky');
+            } else {
+                toc.classList.remove('sticky');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Xander Horn</h1>
+    <div class="social-icons">
+        
+            <a href="https://github.com/xanderhorn" target="_blank"><i class="fab fa-github"></i></a>
+        
+        
+            <a href="https://www.linkedin.com/in/xanderhorn/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        
+    </div>
+    <p><span class="info-label">Email: </span><span class="info-value">xanderhorn@hotmail.com</span></p>
+    <p><span class="info-label">Phone: </span><span class="info-value">+27818208152</span></p>
+    <p><span class="info-label">Location: </span><span class="info-value">Cape Town, South Africa</span></p>
+    <p><span class="info-label">Time Zone: </span><span class="info-value">GMT+2</span></p>
+    <div class="toc" style="position: fixed; left: 40px; top: 60px;">
+        <h2>Table of<br>Contents</h2>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#languages">Languages</a></li>
+        </ul>
+    </div>
+    <div class="section" id="summary">
+        <h2>Summary</h2>
+        <p>As a data enthusiast with over 10 years of experience, my primary focus is on driving projects that<br>deliver value while increasing trust and buy-in across the organization. I have a broad range of<br>experience in both data engineering and data science.<br><br>My diverse experience working with various stage companies has equipped me with the ability to wear<br>many hats while confined to a single title. I enjoy mentoring people, sharing knowledge, driving<br>projects, resolving blockers, building relationships, participating in product design, and recruiting the<br>right high-quality people needed for a project.<br><br>I am a self-starter and like to keep busy with the latest developments in the world of data, analytics,<br>and machine learning both in my personal and professional capacity. I continuously seek opportunities<br>to expand my knowledge through research, short courses, and networking events.<br>Based in Cape Town, South Africa – Looking for permanent or contract roles. I am keen to travel<br>for orientation and essential meetings but cannot relocate.</p>
+    </div>
+    <div class="section" id="skills">
+        <h2>Skills</h2>
+        <ul>
+            
+                <li>Python</li>
+            
+                <li>  R</li>
+            
+                <li>  SQL</li>
+            
+                <li> SAS</li>
+            
+                <li>VBA</li>
+            
+                <li>Git</li>
+            
+                <li>Cloud Platforms (GCP, Azure, AWS)</li>
+            
+                <li>PowerBI</li>
+            
+                <li>Looker Studio</li>
+            
+                <li>Data warehouses (BigQuery, Redshift)</li>
+            
+                <li>Project Management (Monday.com, JIRA)</li>
+            
+                <li>Agile</li>
+            
+                <li>Management</li>
+            
+                <li>Mentoring</li>
+            
+        </ul>
+    </div>
+    <div class="section" id="experience">
+        <h2>Experience</h2>
+        
+            <h3>Lead Data Scientist | Twist</h3>
+            <p><span class="info-label">Duration: </span><span class="info-value">Jul 23 to Present</span></p>
+            <p><span class="info-label">Location: </span><span class="info-value">London, UK / Remote</span></p>
+            <p><strong class="info-label">Description:</strong> <span class="info-value"><br>Responsible for all data science and data engineering initiatives</span></p>
+        
+            <h3>Senior Data Scientist | Koyo Loans</h3>
+            <p><span class="info-label">Duration: </span><span class="info-value">Feb 21 to May 23</span></p>
+            <p><span class="info-label">Location: </span><span class="info-value">London, UK / Remote</span></p>
+            <p><strong class="info-label">Description:</strong> <span class="info-value"><br>Responsible for all data science and data engineering initiatives</span></p>
+        
+    </div>
+    <div class="section" id="education">
+        <h2>Education</h2>
+        
+            <h3>North West University - Potchefstroom</h3>
+            <p><span class="info-label">Degree: </span><span class="info-value">Bsc Quantitative Risk Management</span></p>
+            <p><span class="info-label">Duration: </span><span class="info-value">2010 to 2012</span></p>
+            <p><strong class="info-label">Description:</strong> <span class="info-value"><br>Majored in Statistics, Mathematics, Economics, and Risk Management</span></p>
+            
+    </div>
+    <div class="section" id="languages">
+        <h2>Languages</h2>
+        <ul>
+            
+                <li>Afrikaans (Native)</li>
+            
+                <li>English (Fluent)</li>
+            
+        </ul>
+    </div>
+</body>
+</html>
